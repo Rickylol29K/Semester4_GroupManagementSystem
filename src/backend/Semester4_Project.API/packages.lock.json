@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net10.0": {
+      "semester4_project.business": {
+        "type": "Project",
+        "dependencies": {
+          "Semester4_Project.DataAccess": "[1.0.0, )"
+        }
+      },
+      "semester4_project.dataaccess": {
+        "type": "Project"
+      }
+    }
+  }
+}

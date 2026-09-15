@@ -1,0 +1,35 @@
+# Rider and local editor settings
+.idea/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# .NET build output
+**/[Bb]in/
+**/[Oo]bj/
+TestResults/
+**/TestResults/
+*.trx
+
+# Frontend dependencies and generated output
+node_modules/
+dist/
+build/
+coverage/
+.next/
+.nuxt/
+.vite/
+
+# Local environment files and credentials
+.env
+.env.*
+!.env.example
+!.env.*.example
+**/appsettings.Local.json
+
+# Operating system files and logs
+.DS_Store
+Thumbs.db
+*.log
