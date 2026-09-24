@@ -1,0 +1,29 @@
+# Build output
+**/bin/
+**/obj/
+TestResults/
+**/TestResults/
+*.trx
+
+# Version control and editor settings
+.git/
+.gitignore
+.github/
+.idea/
+.vs/
+*.user
+
+# Tests are not needed to build the runtime image
+tests/
+
+# Docs and local files
+docs/
+work/
+*.md
+.env
+.env.*
+**/appsettings.Local.json
+
+# The Dockerfile itself
+Dockerfile
+.dockerignore
