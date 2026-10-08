@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Info</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <nav class="sidebar">
+      <a href="group.html">Group</a>
+      <a href="dashboard.html">Dashboard</a>
+      <div class="spacer"></div>
+      <a href="profile.html" class="active">Personal Info</a>
+      <a href="../../index.html">Log out</a>
+    </nav>
+
+    <main class="content">
+      <form class="card profile-card" id="profile-form">
+        <h2>Personal Information</h2>
+
+        <input type="text" placeholder="Full name">
+        <input type="email" placeholder="Email">
+
+        <details class="skills">
+          <summary>Skills</summary>
+          <label><input type="checkbox"> Back end</label>
+          <label><input type="checkbox"> Front end</label>
+          <label><input type="checkbox"> Database</label>
+          <label><input type="checkbox"> UI/UX design</label>
+          <label><input type="checkbox"> Testing</label>
+          <label><input type="checkbox"> DevOps</label>
+        </details>
+
+        <button type="submit">Save</button>
+        <p id="profile-status"></p>
+      </form>
+    </main>
+  </div>
+
+  <script src="../../js/profile.js"></script>
+</body>
+</html>

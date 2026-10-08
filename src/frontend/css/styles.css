@@ -1,0 +1,311 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #e8e8e8;
+  color: #222;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  padding: 6px 14px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f0f0f0;
+}
+
+input,
+select,
+textarea {
+  padding: 6px 8px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: #fff;
+}
+
+/* Login */
+
+.login-page {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 100vh;
+}
+
+.login-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  width: 400px;
+  max-width: 100%;
+  padding: 40px;
+  background: #a6a6a6;
+  color: #fff;
+}
+
+.login-panel h1 {
+  margin: 0 0 24px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.login-panel input[type="email"],
+.login-panel input[type="password"] {
+  margin-bottom: 16px;
+  border: none;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.login-options a {
+  color: #fff;
+}
+
+.login-panel button {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+/* App layout with sidebar */
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+  background: #a6a6a6;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px;
+  border: 1px solid #999;
+  background: #fff;
+  color: #222;
+  text-align: center;
+  text-decoration: none;
+}
+
+.sidebar a.active {
+  font-weight: bold;
+}
+
+.sidebar .spacer {
+  flex: 1;
+}
+
+.content {
+  flex: 1;
+  padding: 24px;
+}
+
+.card {
+  padding: 16px;
+  border: 2px solid #aaa;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list li {
+  margin-bottom: 6px;
+  padding: 6px 12px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: #fff;
+}
+
+/* Group creation - student */
+
+.group-page .card {
+  width: 240px;
+}
+
+.group-page textarea {
+  width: 100%;
+  min-height: 160px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+/* Dashboard */
+
+.announcement {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.announcement small {
+  display: block;
+  color: #666;
+}
+
+.inline-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.inline-form input {
+  flex: 1;
+  min-width: 0;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 80px);
+  gap: 4px;
+}
+
+.calendar .day-name {
+  padding: 6px;
+  border: 1px solid #999;
+  background: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+
+.calendar .day {
+  min-height: 60px;
+  padding: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 11px;
+}
+
+.calendar .empty {
+  border: none;
+  background: transparent;
+}
+
+.calendar-title {
+  margin: 0 0 8px;
+  font-weight: normal;
+}
+
+.event {
+  margin-top: 2px;
+  padding: 1px 4px;
+  border-radius: 8px;
+  background: #a3a36b;
+  color: #fff;
+}
+
+/* Profile */
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 360px;
+  max-width: 100%;
+}
+
+.profile-card h2 {
+  text-align: left;
+}
+
+.skills {
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+.skills summary {
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.skills label {
+  display: block;
+  padding: 2px 12px;
+}
+
+/* Teacher */
+
+.teacher-page .students-box {
+  width: 200px;
+}
+
+.groups {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+}
+
+.group-tile {
+  min-width: 120px;
+  min-height: 120px;
+  padding: 8px;
+  background: #ddd;
+}
+
+.request {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 6px;
+  padding: 4px 8px;
+  background: #ddd;
+}
+
+.request span {
+  flex: 1;
+}
+
+.request button {
+  padding: 2px 8px;
+  font-size: 12px;
+}
