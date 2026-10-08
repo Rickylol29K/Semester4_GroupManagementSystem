@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Group Creation - Teacher</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <nav class="sidebar">
+      <a href="groups.html" class="active">Groups</a>
+      <a href="#">Classes</a>
+      <div class="spacer"></div>
+      <a href="../../index.html">Log out</a>
+    </nav>
+
+    <main class="content teacher-page">
+      <div class="row">
+        <section class="card">
+          <h2>Add new project</h2>
+          <div class="row">
+            <div class="students-box">
+              <form class="inline-form" id="student-form">
+                <input type="text" id="student-name" placeholder="Add new student" required>
+                <button type="submit">Add</button>
+              </form>
+              <ul class="list" id="student-list">
+                <li>Student 1</li>
+                <li>Student 2</li>
+                <li>Student 3</li>
+              </ul>
+            </div>
+
+            <form id="project-form">
+              <label for="project-name">Enter project name</label><br>
+              <input type="text" id="project-name" placeholder="Enter text" required>
+              <br><br>
+              <button type="submit">Create project and groups</button>
+            </form>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Change requests</h2>
+          <div id="requests">
+            <div class="request"><span>Student 1</span><button>Deny</button><button>Approve</button></div>
+            <div class="request"><span>Student 2</span><button>Deny</button><button>Approve</button></div>
+            <div class="request"><span>Student 3</span><button>Deny</button><button>Approve</button></div>
+          </div>
+        </section>
+      </div>
+
+      <section class="card" style="margin-top: 24px;">
+        <h2>Groups</h2>
+        <div class="groups" id="groups">
+          <div class="group-tile">Group 1</div>
+          <div class="group-tile">Group 2</div>
+          <div class="group-tile">Group 3</div>
+          <div class="group-tile">Group 4</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../../js/teacher.js"></script>
+</body>
+</html>

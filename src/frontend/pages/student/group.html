@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Group</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <nav class="sidebar">
+      <a href="group.html" class="active">Group</a>
+      <a href="dashboard.html">Dashboard</a>
+      <div class="spacer"></div>
+      <a href="profile.html">Personal Info</a>
+      <a href="../../index.html">Log out</a>
+    </nav>
+
+    <main class="content group-page">
+      <div class="row">
+        <ul class="list">
+          <li>Student 1</li>
+          <li>Student 2</li>
+          <li>Student 3</li>
+          <li>Student 4</li>
+          <li>Student 5</li>
+          <li>Student 6</li>
+        </ul>
+
+        <div class="card">
+          <h2>Justification</h2>
+          <textarea id="justification" placeholder="Why were these students grouped together?" readonly></textarea>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="accept-group">Accept</button>
+        <button id="request-change">Request change</button>
+      </div>
+      <p id="group-status"></p>
+    </main>
+  </div>
+
+  <script src="../../js/group.js"></script>
+</body>
+</html>

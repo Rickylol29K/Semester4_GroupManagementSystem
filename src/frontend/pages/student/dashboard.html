@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Group Dashboard</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <nav class="sidebar">
+      <a href="group.html">Group</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <div class="spacer"></div>
+      <a href="profile.html">Personal Info</a>
+      <a href="../../index.html">Log out</a>
+    </nav>
+
+    <main class="content">
+      <div class="row">
+        <section class="card">
+          <h2>Announcements</h2>
+          <div id="announcements">
+            <div class="announcement">
+              <small>Student 6</small>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+            <div class="announcement">
+              <small>Student 2</small>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+          </div>
+          <form class="inline-form" id="announcement-form">
+            <input type="text" id="announcement-text" placeholder="Enter text" required>
+            <button type="submit">Post</button>
+          </form>
+        </section>
+
+        <section>
+          <h2 class="calendar-title">October</h2>
+          <div class="calendar" id="calendar">
+            <div class="day-name">Mon</div>
+            <div class="day-name">Tue</div>
+            <div class="day-name">Wed</div>
+            <div class="day-name">Thu</div>
+            <div class="day-name">Fri</div>
+            <div class="day-name">Sat</div>
+            <div class="day-name">Sun</div>
+          </div>
+
+          <form class="inline-form" id="event-form">
+            <input type="text" id="event-text" placeholder="Enter text" required>
+            <select id="event-day" required>
+              <option value="">Select day</option>
+            </select>
+            <select id="event-student">
+              <option value="">Assign student</option>
+              <option>Student 1</option>
+              <option>Student 2</option>
+              <option>Student 3</option>
+              <option>Student 4</option>
+              <option>Student 5</option>
+              <option>Student 6</option>
+            </select>
+            <button type="submit">Create</button>
+          </form>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="../../js/dashboard.js"></script>
+</body>
+</html>
