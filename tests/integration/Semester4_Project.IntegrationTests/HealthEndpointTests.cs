@@ -1,3 +1,5 @@
+// Checks that the API starts and the /health endpoint answers "Healthy".
+
 using System.Net;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit;

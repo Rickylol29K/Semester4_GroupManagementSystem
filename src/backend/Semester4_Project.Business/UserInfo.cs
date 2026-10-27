@@ -1,6 +1,7 @@
+// The user data the rest of the app may see. The password hash is left out on purpose.
+
 namespace Semester4_Project.Business;
 
-// The user data the rest of the app may see (no password hash).
 public class UserInfo
 {
     public int Id { get; set; }

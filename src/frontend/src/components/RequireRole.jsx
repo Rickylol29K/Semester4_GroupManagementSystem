@@ -1,3 +1,6 @@
+//guards a page: only shows it if a user with the right role is logged in,
+//otherwise sends them to the login page or to their own start page.
+
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { getCurrentUser, homePage } from "../api.js";

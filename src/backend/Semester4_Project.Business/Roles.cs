@@ -1,3 +1,5 @@
+// The two kinds of account in the app: Student and Teacher.
+
 namespace Semester4_Project.Business;
 
 public static class Roles

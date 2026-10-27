@@ -1,3 +1,5 @@
+//page to create a new student or teacher account.
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { homePage, register } from "../api.js";

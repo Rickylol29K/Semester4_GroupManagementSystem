@@ -1,3 +1,5 @@
+//the sidebar menu + page content, shared by every page after logging in.
+
 import { NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../api.js";
 

@@ -1,3 +1,6 @@
+// Handles account requests from the frontend: register, log in, log out and "who am I".
+// It passes the work to AccountService and gives the browser a login cookie.
+
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;

@@ -1,10 +1,11 @@
+// Requests only teachers may use. Students get 403 Forbidden, logged out users get 401.
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Semester4_Project.Business;
 
 namespace Semester4_Project.API.Controllers;
 
-// Only teachers can use these endpoints. Students get 403 Forbidden.
 [ApiController]
 [Route("api/teacher")]
 [Authorize(Roles = Roles.Teacher)]

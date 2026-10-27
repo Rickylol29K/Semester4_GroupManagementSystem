@@ -1,3 +1,5 @@
+//student page that shows their group members. Still example data (user story 6).
+
 import { useState } from "react";
 import Layout from "../../components/Layout.jsx";
 

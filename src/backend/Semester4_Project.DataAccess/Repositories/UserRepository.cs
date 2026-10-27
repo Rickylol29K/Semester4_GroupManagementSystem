@@ -1,3 +1,5 @@
+// Reads and saves users in the database. The only place that touches the Users table.
+
 using Microsoft.EntityFrameworkCore;
 using Semester4_Project.DataAccess.Entities;
 

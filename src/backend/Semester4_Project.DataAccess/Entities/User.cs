@@ -1,3 +1,5 @@
+// One row in the Users table: an account with an email, a hashed password and a role.
+
 namespace Semester4_Project.DataAccess.Entities;
 
 public class User
