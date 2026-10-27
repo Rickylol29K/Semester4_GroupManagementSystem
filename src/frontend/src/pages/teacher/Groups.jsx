@@ -1,3 +1,5 @@
+//teacher page to make a project and see groups. Shows the students that have an account.
+
 import { useEffect, useState } from "react";
 import { getStudents } from "../../api.js";
 import Layout from "../../components/Layout.jsx";

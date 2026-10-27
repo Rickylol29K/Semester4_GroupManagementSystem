@@ -1,3 +1,5 @@
+//student dashboard with announcements and a calendar. Still example data (user stories 8 and 9).
+
 import { useState } from "react";
 import Layout from "../../components/Layout.jsx";
 

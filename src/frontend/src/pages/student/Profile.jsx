@@ -1,3 +1,5 @@
+//student profile page. Not saved yet (user story 2).
+
 import { useState } from "react";
 import Layout from "../../components/Layout.jsx";
 

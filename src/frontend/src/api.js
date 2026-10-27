@@ -1,4 +1,4 @@
-//small helpers for talking to the backend.
+//all calls to the backend in one place (register, login, logout, who is logged in).
 
 async function post(url, body) {
   const response = await fetch(url, {

@@ -1,10 +1,12 @@
+// Tests for user story 1 (account registration and login).
+// Each test checks one acceptance criterion by calling the real API.
+
 using System.Net;
 using System.Net.Http.Json;
 using Xunit;
 
 namespace Semester4_Project.IntegrationTests;
 
-// Tests for user story 1: account registration and login.
 public class AuthTests : IClassFixture<TestAppFactory>
 {
     private readonly TestAppFactory _factory;

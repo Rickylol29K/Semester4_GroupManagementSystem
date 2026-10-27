@@ -1,3 +1,6 @@
+// The rules for accounts: registering, logging in and listing students.
+// Checks things like "is this email already used?" and "is the password correct?".
+
 using Microsoft.AspNetCore.Identity;
 using Semester4_Project.DataAccess.Entities;
 using Semester4_Project.DataAccess.Repositories;

@@ -1,3 +1,6 @@
+// Start point of the backend. Sets up everything the app needs (database, login cookies,
+// controllers) and then starts the web server.
+
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Semester4_Project.Business;
 

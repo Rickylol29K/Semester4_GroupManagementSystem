@@ -1,3 +1,6 @@
+// The data the frontend sends to create an account.
+// The [Required], [EmailAddress] and [MinLength] rules are checked automatically.
+
 using System.ComponentModel.DataAnnotations;
 
 namespace Semester4_Project.API.Models;

@@ -1,3 +1,6 @@
+// The connection between our C# code and the SQL Server database.
+// Every DbSet here is a table (right now only Users).
+
 using Microsoft.EntityFrameworkCore;
 using Semester4_Project.DataAccess.Entities;
 

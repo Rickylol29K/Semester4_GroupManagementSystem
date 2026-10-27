@@ -1,3 +1,5 @@
+//login page. Sends email + password to the backend and goes to the right start page.
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { homePage, login } from "../api.js";

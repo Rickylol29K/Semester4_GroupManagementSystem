@@ -1,3 +1,5 @@
+// Connects the app to SQL Server and creates or updates the tables when the app starts.
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Semester4_Project.DataAccess.Repositories;

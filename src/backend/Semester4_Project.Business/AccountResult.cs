@@ -1,6 +1,7 @@
+// The answer AccountService gives back: either a User (it worked) or an Error message (it failed).
+
 namespace Semester4_Project.Business;
 
-// Either a user (success) or an error message (failure).
 public class AccountResult
 {
     public UserInfo? User { get; set; }

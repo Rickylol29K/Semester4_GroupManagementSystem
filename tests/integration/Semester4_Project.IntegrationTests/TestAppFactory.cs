@@ -1,3 +1,6 @@
+// Starts the API for the tests with an in-memory database instead of SQL Server,
+// so the tests don't need a real database running.
+
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
@@ -9,8 +12,6 @@ using Semester4_Project.DataAccess;
 
 namespace Semester4_Project.IntegrationTests;
 
-// Starts the API with an in-memory database instead of SQL Server,
-// so the tests don't need a real database running.
 public class TestAppFactory : WebApplicationFactory<Program>
 {
     private readonly string _databaseName = Guid.NewGuid().ToString();

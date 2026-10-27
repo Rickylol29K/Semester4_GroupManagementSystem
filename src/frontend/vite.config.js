@@ -1,3 +1,5 @@
+//settings for Vite, the tool that runs and builds the React app.
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 

@@ -1,3 +1,5 @@
+// The data the frontend sends to log in.
+
 using System.ComponentModel.DataAnnotations;
 
 namespace Semester4_Project.API.Models;
