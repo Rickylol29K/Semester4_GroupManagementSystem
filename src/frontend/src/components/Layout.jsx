@@ -1,4 +1,5 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { logout } from "../api.js";
 
 const studentLinks = [
   { to: "/student/group", label: "Group" },
@@ -11,7 +12,13 @@ const teacherLinks = [
 
 //sidebar + page content. NavLink adds the "active" class for the current page.
 export default function Layout({ role, className = "", children }) {
+  const navigate = useNavigate();
   const links = role === "teacher" ? teacherLinks : studentLinks;
+
+  async function handleLogout() {
+    await logout();
+    navigate("/");
+  }
 
   return (
     <div className="app">
@@ -22,7 +29,7 @@ export default function Layout({ role, className = "", children }) {
         {role === "teacher" && <a href="#">Classes</a>}
         <div className="spacer"></div>
         {role === "student" && <NavLink to="/student/profile">Personal Info</NavLink>}
-        <NavLink to="/" end>Log out</NavLink>
+        <a href="#" onClick={handleLogout}>Log out</a>
       </nav>
 
       <main className={"content " + className}>{children}</main>

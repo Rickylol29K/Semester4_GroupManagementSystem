@@ -1,12 +1,23 @@
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { homePage, login } from "../api.js";
 
 export default function Login() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [staySignedIn, setStaySignedIn] = useState(false);
+  const [error, setError] = useState("");
 
-  //go to the student group page after logging in.
-  function handleSubmit(event) {
+  //log in, then go to the student or teacher start page.
+  async function handleSubmit(event) {
     event.preventDefault();
-    navigate("/student/group");
+    try {
+      const user = await login(email, password, staySignedIn);
+      navigate(homePage(user));
+    } catch (err) {
+      setError(err.message);
+    }
   }
 
   return (
@@ -15,15 +26,19 @@ export default function Login() {
         <h1>Authentication</h1>
 
         <label htmlFor="email">Email</label>
-        <input type="email" id="email" />
+        <input type="email" id="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
 
         <label htmlFor="password">Password</label>
-        <input type="password" id="password" />
+        <input type="password" id="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+
+        {error && <p className="error">{error}</p>}
 
         <div className="login-options">
           <div>
-            <label><input type="checkbox" /> Stay signed in</label><br />
-            <a href="#">Forgot password?</a>
+            <label>
+              <input type="checkbox" checked={staySignedIn} onChange={(e) => setStaySignedIn(e.target.checked)} /> Stay signed in
+            </label><br />
+            <Link to="/register">Create an account</Link>
           </div>
           <button type="submit">Log in</button>
         </div>
