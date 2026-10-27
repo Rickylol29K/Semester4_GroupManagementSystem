@@ -309,3 +309,13 @@ textarea {
   padding: 2px 8px;
   font-size: 12px;
 }
+
+.login-panel select {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.error {
+  color: #ffd2d2;
+  font-size: 13px;
+}
