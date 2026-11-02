@@ -273,6 +273,20 @@ textarea {
   padding: 2px 12px;
 }
 
+.profile-card .field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.availability {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
 /* Teacher */
 
 .teacher-page .students-box {

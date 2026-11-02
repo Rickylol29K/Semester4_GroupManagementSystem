@@ -11,6 +11,7 @@ public static class BusinessSetup
     {
         DataAccessSetup.AddDataAccess(services, connectionString);
         services.AddScoped<AccountService>();
+        services.AddScoped<ProfileService>();
     }
 
     public static void UpdateDatabase(IServiceProvider services)

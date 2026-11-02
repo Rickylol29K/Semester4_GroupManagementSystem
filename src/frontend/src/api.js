@@ -1,8 +1,9 @@
-//all calls to the backend in one place (register, login, logout, who is logged in).
+//all calls to the backend in one place (accounts and the student profile).
 
-async function post(url, body) {
+//sends json to the backend with POST or PUT and returns the json answer.
+async function send(method, url, body) {
   const response = await fetch(url, {
-    method: "POST",
+    method,
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   });
@@ -22,11 +23,11 @@ function errorMessage(data) {
 }
 
 export function register(email, password, role) {
-  return post("/api/auth/register", { email, password, role });
+  return send("POST", "/api/auth/register", { email, password, role });
 }
 
 export function login(email, password, staySignedIn) {
-  return post("/api/auth/login", { email, password, staySignedIn });
+  return send("POST", "/api/auth/login", { email, password, staySignedIn });
 }
 
 export function logout() {
@@ -42,6 +43,17 @@ export async function getCurrentUser() {
 export async function getStudents() {
   const response = await fetch("/api/teacher/students");
   return response.ok ? response.json() : [];
+}
+
+//returns the profile of the logged in student (empty fields if they never saved one).
+export async function getProfile() {
+  const response = await fetch("/api/student/profile");
+  if (!response.ok) throw new Error("Could not load your profile.");
+  return response.json();
+}
+
+export function saveProfile(profile) {
+  return send("PUT", "/api/student/profile", profile);
 }
 
 //the first page a user sees after logging in.

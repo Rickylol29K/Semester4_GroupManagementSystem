@@ -12,6 +12,7 @@ public static class DataAccessSetup
     {
         services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
         services.AddScoped<UserRepository>();
+        services.AddScoped<ProfileRepository>();
     }
 
     // Creates the database and tables if they don't exist yet.
