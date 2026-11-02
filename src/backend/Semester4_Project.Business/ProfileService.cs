@@ -30,8 +30,11 @@ public class ProfileService
     public async Task<ProfileInfo> SaveAsync(int userId, ProfileInfo info)
     {
         var profile = await _profiles.GetByUserIdAsync(userId);
-        var isNew = profile == null;
-        profile ??= new StudentProfile { UserId = userId };
+        if (profile == null)
+        {
+            profile = new StudentProfile { UserId = userId };
+            _profiles.Add(profile);
+        }
 
         profile.FullName = info.FullName.Trim();
         profile.Skills = JoinList(info.Skills);
@@ -42,14 +45,7 @@ public class ProfileService
         profile.WorkingPreferences = info.WorkingPreferences.Trim();
         profile.Availability = JoinList(info.Availability);
 
-        if (isNew)
-        {
-            await _profiles.AddAsync(profile);
-        }
-        else
-        {
-            await _profiles.SaveAsync();
-        }
+        await _profiles.SaveAsync();
 
         return ToProfileInfo(profile);
     }
@@ -69,13 +65,19 @@ public class ProfileService
         };
     }
 
-    // ["Back end", "Testing"] -> "Back end,Testing". Empty items and commas inside items are removed.
+    // Turns ["Back end", "Testing"] into "Back end,Testing".
+    // Empty items, doubles and commas inside an item are left out, so the text can be split again.
     private static string JoinList(List<string> items)
     {
-        var cleaned = items
-            .Select(item => item.Replace(",", "").Trim())
-            .Where(item => item != "")
-            .Distinct();
+        var cleaned = new List<string>();
+        foreach (var item in items)
+        {
+            var text = item.Replace(",", "").Trim();
+            if (text != "" && !cleaned.Contains(text))
+            {
+                cleaned.Add(text);
+            }
+        }
         return string.Join(",", cleaned);
     }
 

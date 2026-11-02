@@ -19,13 +19,12 @@ public class ProfileRepository
         return _db.StudentProfiles.FirstOrDefaultAsync(p => p.UserId == userId);
     }
 
-    public async Task AddAsync(StudentProfile profile)
+    // Marks a new profile to be added. It is stored when SaveAsync is called.
+    public void Add(StudentProfile profile)
     {
         _db.StudentProfiles.Add(profile);
-        await _db.SaveChangesAsync();
     }
 
-    // Saves the changes made to a profile that was loaded with GetByUserIdAsync.
     public Task SaveAsync()
     {
         return _db.SaveChangesAsync();
