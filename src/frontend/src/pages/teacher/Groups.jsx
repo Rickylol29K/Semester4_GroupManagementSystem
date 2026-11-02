@@ -23,8 +23,8 @@ export default function Groups() {
     setStudentName("");
   }
 
-  //approving or denying a change request removes it from the list.
   function handleRequest(name) {
+    //approving or denying a change request removes it from the list.
     setRequests(requests.filter((request) => request !== name));
   }
 

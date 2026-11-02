@@ -12,7 +12,7 @@ const teacherLinks = [
   { to: "/teacher/groups", label: "Groups" },
 ];
 
-//sidebar + page content. NavLink adds the "active" class for the current page.
+//NavLink adds the "active" class to the link of the current page.
 export default function Layout({ role, className = "", children }) {
   const navigate = useNavigate();
   const links = role === "teacher" ? teacherLinks : studentLinks;
