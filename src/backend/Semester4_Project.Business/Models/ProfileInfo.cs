@@ -1,16 +1,15 @@
-// The data the frontend sends to save a student profile.
+// A student's profile, as the frontend sends and receives it.
 // The [MaxLength] rules are checked automatically, so nobody can send huge texts.
 
 using System.ComponentModel.DataAnnotations;
 
-namespace Semester4_Project.API.Models;
+namespace Semester4_Project.Business.Models;
 
-public class ProfileRequest
+public class ProfileInfo
 {
     [MaxLength(100)]
     public string FullName { get; set; } = "";
 
-    [MaxLength(20)]
     public List<string> Skills { get; set; } = new();
 
     [MaxLength(1000)]
@@ -28,6 +27,6 @@ public class ProfileRequest
     [MaxLength(1000)]
     public string WorkingPreferences { get; set; } = "";
 
-    [MaxLength(7)]
+    // The days the student can work on the project, e.g. ["Monday", "Thursday"].
     public List<string> Availability { get; set; } = new();
 }

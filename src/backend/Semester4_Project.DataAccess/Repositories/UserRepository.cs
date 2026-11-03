@@ -19,11 +19,6 @@ public class UserRepository
         return _db.Users.FirstOrDefaultAsync(u => u.Email == email);
     }
 
-    public Task<bool> EmailExistsAsync(string email)
-    {
-        return _db.Users.AnyAsync(u => u.Email == email);
-    }
-
     public Task<List<User>> GetByRoleAsync(string role)
     {
         return _db.Users.Where(u => u.Role == role).OrderBy(u => u.Email).ToListAsync();

@@ -1,8 +1,0 @@
-<Project>
-  <PropertyGroup>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
-    <DisableTransitiveProjectReferences>true</DisableTransitiveProjectReferences>
-  </PropertyGroup>
-</Project>

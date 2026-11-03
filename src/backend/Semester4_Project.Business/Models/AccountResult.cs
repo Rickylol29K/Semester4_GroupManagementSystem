@@ -1,6 +1,6 @@
 // The answer AccountService gives back: either a User (it worked) or an Error message (it failed).
 
-namespace Semester4_Project.Business;
+namespace Semester4_Project.Business.Models;
 
 public class AccountResult
 {

@@ -1,5 +1,5 @@
-//student profile page (user story 2). The student fills in who they are and how they like to work,
-//so the system can find a group that fits them. It is saved in the backend and can be changed later.
+// Student profile page (user story 2). The student fills in who they are and how they like to work,
+// so the system can find a group that fits them. It is saved in the backend and can be changed later.
 
 import { useEffect, useState } from "react";
 import Layout from "../../components/Layout.jsx";
@@ -8,7 +8,7 @@ import { getProfile, saveProfile } from "../../api.js";
 const skills = ["Back end", "Front end", "Database", "UI/UX design", "Testing", "DevOps"];
 const weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
-//the text fields of the profile, with the label shown above each one.
+// The text fields of the profile, with the label shown above each one.
 const textFields = [
   { name: "interests", label: "Interests" },
   { name: "strengths", label: "Strengths" },
@@ -33,7 +33,7 @@ export default function Profile() {
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
 
-  //load the saved profile when the page opens.
+  // Load the saved profile when the page opens.
   useEffect(() => {
     getProfile().then(setProfile).catch((err) => setError(err.message));
   }, []);
@@ -43,7 +43,7 @@ export default function Profile() {
     setStatus("");
   }
 
-  //adds the item to the list if it is checked, removes it if it is unchecked.
+  // Adds the item to the list if it is checked, removes it if it is unchecked.
   function toggle(listName, item) {
     const list = profile[listName];
     setField(listName, list.includes(item) ? list.filter((x) => x !== item) : [...list, item]);
@@ -61,7 +61,7 @@ export default function Profile() {
   }
 
   return (
-    <Layout role="student">
+    <Layout role="Student">
       <form className="card profile-card" onSubmit={handleSubmit}>
         <h2>Personal Information</h2>
 

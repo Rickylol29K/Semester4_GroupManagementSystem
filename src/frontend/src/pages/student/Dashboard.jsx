@@ -1,4 +1,4 @@
-//student dashboard with announcements and a calendar. Still example data (user stories 8 and 9).
+// Student dashboard with announcements and a calendar. Still example data (user stories 8 and 9).
 
 import { useState } from "react";
 import Layout from "../../components/Layout.jsx";
@@ -7,7 +7,7 @@ const dayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const students = ["Student 1", "Student 2", "Student 3", "Student 4", "Student 5", "Student 6"];
 const daysInOctober = 31;
 
-//getDay() gives 0 for Sunday, so shift it to make monday the first column.
+// getDay() gives 0 for Sunday, so shift it to make Monday the first column.
 const firstWeekday = (new Date(new Date().getFullYear(), 9, 1).getDay() + 6) % 7;
 const days = Array.from({ length: daysInOctober }, (_, i) => i + 1);
 
@@ -18,20 +18,20 @@ export default function Dashboard() {
   ]);
   const [announcementText, setAnnouncementText] = useState("");
 
-  //events per day, e.g. { 12: ["Meeting (Student 1)"] }
+  // Events per day, e.g. { 12: ["Meeting (Student 1)"] }
   const [events, setEvents] = useState({});
   const [eventText, setEventText] = useState("");
   const [eventDay, setEventDay] = useState("");
   const [eventStudent, setEventStudent] = useState("");
 
-  //post new announcement at top of the list
+  // Post new announcement at top of the list
   function postAnnouncement(event) {
     event.preventDefault();
     setAnnouncements([{ author: "You", text: announcementText }, ...announcements]);
     setAnnouncementText("");
   }
 
-  //add event to the chosen day.
+  // Add event to the chosen day.
   function createEvent(event) {
     event.preventDefault();
     const label = eventStudent ? eventText + " (" + eventStudent + ")" : eventText;
@@ -40,7 +40,7 @@ export default function Dashboard() {
   }
 
   return (
-    <Layout role="student">
+    <Layout role="Student">
       <div className="row">
         <section className="card">
           <h2>Announcements</h2>

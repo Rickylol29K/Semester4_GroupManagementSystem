@@ -1,3 +1,5 @@
+/* ===== Basics ===== */
+
 * {
   box-sizing: border-box;
 }
@@ -37,7 +39,12 @@ textarea {
   background: #fff;
 }
 
-/* Login */
+.error {
+  color: #c00;
+  font-size: 13px;
+}
+
+/* ===== Login and register ===== */
 
 .login-page {
   display: flex;
@@ -69,6 +76,15 @@ textarea {
   border: none;
 }
 
+.login-panel select {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.login-panel .error {
+  color: #ffd2d2;
+}
+
 .login-options {
   display: flex;
   justify-content: space-between;
@@ -87,7 +103,7 @@ textarea {
   color: #fff;
 }
 
-/* App layout with sidebar */
+/* ===== Layout: sidebar, cards, lists ===== */
 
 .app {
   display: flex;
@@ -159,7 +175,7 @@ textarea {
   background: #fff;
 }
 
-/* Group creation - student */
+/* ===== Student: group page ===== */
 
 .group-page .card {
   width: 240px;
@@ -178,7 +194,7 @@ textarea {
   margin-top: 24px;
 }
 
-/* Dashboard */
+/* ===== Student: dashboard ===== */
 
 .announcement {
   margin-bottom: 10px;
@@ -244,7 +260,7 @@ textarea {
   color: #fff;
 }
 
-/* Profile */
+/* ===== Student: profile ===== */
 
 .profile-card {
   display: flex;
@@ -287,7 +303,11 @@ textarea {
   border-radius: 4px;
 }
 
-/* Teacher */
+/* ===== Teacher: groups page ===== */
+
+.groups-card {
+  margin-top: 24px;
+}
 
 .teacher-page .students-box {
   width: 200px;
@@ -322,14 +342,4 @@ textarea {
 .request button {
   padding: 2px 8px;
   font-size: 12px;
-}
-
-.login-panel select {
-  width: 100%;
-  margin-bottom: 16px;
-}
-
-.error {
-  color: #ffd2d2;
-  font-size: 13px;
 }

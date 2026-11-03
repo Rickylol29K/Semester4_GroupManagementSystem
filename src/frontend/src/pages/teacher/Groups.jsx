@@ -1,22 +1,23 @@
-//teacher page to make a project and see groups. Shows the students that have an account.
+// Teacher page to make a project and see groups. Shows the students that have an account.
 
 import { useEffect, useState } from "react";
-import { getStudents } from "../../api.js";
 import Layout from "../../components/Layout.jsx";
+import { getStudents } from "../../api.js";
+
+const groups = ["Group 1", "Group 2", "Group 3", "Group 4"];
 
 export default function Groups() {
   const [students, setStudents] = useState([]);
   const [studentName, setStudentName] = useState("");
   const [projectName, setProjectName] = useState("");
   const [requests, setRequests] = useState(["Student 1", "Student 2", "Student 3"]);
-  const groups = ["Group 1", "Group 2", "Group 3", "Group 4"];
 
-  //start with the students that have an account.
+  // Start with the students that have an account.
   useEffect(() => {
     getStudents().then((list) => setStudents(list.map((student) => student.email)));
   }, []);
 
-  //add a student to the list.
+  // Add a student to the list.
   function addStudent(event) {
     event.preventDefault();
     setStudents([...students, studentName]);
@@ -24,12 +25,12 @@ export default function Groups() {
   }
 
   function handleRequest(name) {
-    //approving or denying a change request removes it from the list.
+    // Approving or denying a change request removes it from the list.
     setRequests(requests.filter((request) => request !== name));
   }
 
   return (
-    <Layout role="teacher" className="teacher-page">
+    <Layout role="Teacher" className="teacher-page">
       <div className="row">
         <section className="card">
           <h2>Add new project</h2>
@@ -69,7 +70,7 @@ export default function Groups() {
         </section>
       </div>
 
-      <section className="card" style={{ marginTop: 24 }}>
+      <section className="card groups-card">
         <h2>Groups</h2>
         <div className="groups">
           {groups.map((name) => <div className="group-tile" key={name}>{name}</div>)}

@@ -1,4 +1,4 @@
-//student page that shows their group members. Still example data (user story 6).
+// Student page that shows their group members. Still example data (user story 6).
 
 import { useState } from "react";
 import Layout from "../../components/Layout.jsx";
@@ -9,7 +9,7 @@ export default function Group() {
   const [status, setStatus] = useState("");
 
   return (
-    <Layout role="student" className="group-page">
+    <Layout role="Student" className="group-page">
       <div className="row">
         <ul className="list">
           {members.map((name) => <li key={name}>{name}</li>)}
