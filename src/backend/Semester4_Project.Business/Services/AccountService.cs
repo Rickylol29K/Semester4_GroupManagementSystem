@@ -2,10 +2,11 @@
 // Checks things like "is this email already used?" and "is the password correct?".
 
 using Microsoft.AspNetCore.Identity;
+using Semester4_Project.Business.Models;
 using Semester4_Project.DataAccess.Entities;
 using Semester4_Project.DataAccess.Repositories;
 
-namespace Semester4_Project.Business;
+namespace Semester4_Project.Business.Services;
 
 public class AccountService
 {
@@ -28,7 +29,7 @@ public class AccountService
             return new AccountResult { Error = "Role must be Student or Teacher." };
         }
 
-        if (await _users.EmailExistsAsync(email))
+        if (await _users.GetByEmailAsync(email) != null)
         {
             return new AccountResult { Error = "An account with this email already exists." };
         }

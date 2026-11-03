@@ -2,7 +2,8 @@
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Semester4_Project.Business;
+using Semester4_Project.Business.Models;
+using Semester4_Project.Business.Services;
 
 namespace Semester4_Project.API.Controllers;
 

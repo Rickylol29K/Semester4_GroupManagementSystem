@@ -10,7 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Semester4_Project.DataAccess;
 
-namespace Semester4_Project.IntegrationTests;
+namespace Semester4_Project.Tests;
 
 public class TestAppFactory : WebApplicationFactory<Program>
 {

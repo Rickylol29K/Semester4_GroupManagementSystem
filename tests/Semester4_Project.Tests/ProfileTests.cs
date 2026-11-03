@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http.Json;
 using Xunit;
 
-namespace Semester4_Project.IntegrationTests;
+namespace Semester4_Project.Tests;
 
 public class ProfileTests : IClassFixture<TestAppFactory>
 {

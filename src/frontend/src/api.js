@@ -1,6 +1,6 @@
-//all calls to the backend in one place (accounts and the student profile).
+// All calls to the backend in one place (accounts and the student profile).
 
-//sends json to the backend with POST or PUT and returns the json answer.
+// Sends json to the backend with POST or PUT and returns the json answer.
 async function send(method, url, body) {
   const response = await fetch(url, {
     method,
@@ -15,7 +15,7 @@ async function send(method, url, body) {
   return data;
 }
 
-//the backend sends either { error } or validation errors { errors: { Field: [...] } }.
+// The backend sends either { error } or validation errors { errors: { Field: [...] } }.
 function errorMessage(data) {
   if (data?.error) return data.error;
   if (data?.errors) return Object.values(data.errors).flat().join(" ");
@@ -34,7 +34,7 @@ export function logout() {
   return fetch("/api/auth/logout", { method: "POST" });
 }
 
-//returns the logged in user, or null if nobody is logged in.
+// Returns the logged in user, or null if nobody is logged in.
 export async function getCurrentUser() {
   const response = await fetch("/api/auth/me");
   return response.ok ? response.json() : null;
@@ -45,7 +45,7 @@ export async function getStudents() {
   return response.ok ? response.json() : [];
 }
 
-//returns the profile of the logged in student (empty fields if they never saved one).
+// Returns the profile of the logged in student (empty fields if they never saved one).
 export async function getProfile() {
   const response = await fetch("/api/student/profile");
   if (!response.ok) throw new Error("Could not load your profile.");
@@ -56,7 +56,7 @@ export function saveProfile(profile) {
   return send("PUT", "/api/student/profile", profile);
 }
 
-//the first page a user sees after logging in.
+// The first page a user sees after logging in.
 export function homePage(user) {
   return user.role === "Teacher" ? "/teacher/groups" : "/student/group";
 }

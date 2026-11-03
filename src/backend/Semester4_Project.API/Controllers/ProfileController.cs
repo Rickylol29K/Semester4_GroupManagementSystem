@@ -4,8 +4,8 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Semester4_Project.API.Models;
-using Semester4_Project.Business;
+using Semester4_Project.Business.Models;
+using Semester4_Project.Business.Services;
 
 namespace Semester4_Project.API.Controllers;
 
@@ -28,21 +28,9 @@ public class ProfileController : ControllerBase
     }
 
     [HttpPut]
-    public async Task<IActionResult> Save(ProfileRequest request)
+    public async Task<IActionResult> Save(ProfileInfo profile)
     {
-        var info = new ProfileInfo
-        {
-            FullName = request.FullName,
-            Skills = request.Skills,
-            Interests = request.Interests,
-            Strengths = request.Strengths,
-            Weaknesses = request.Weaknesses,
-            LearningGoals = request.LearningGoals,
-            WorkingPreferences = request.WorkingPreferences,
-            Availability = request.Availability,
-        };
-
-        return Ok(await _profiles.SaveAsync(CurrentUserId(), info));
+        return Ok(await _profiles.SaveAsync(CurrentUserId(), profile));
     }
 
     // The id of the logged in user, taken from the login cookie.

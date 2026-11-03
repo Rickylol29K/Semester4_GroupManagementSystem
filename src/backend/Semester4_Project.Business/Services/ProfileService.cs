@@ -1,10 +1,11 @@
 // The rules for student profiles: getting a student's profile and saving changes to it.
 // A student who never saved a profile gets an empty one back.
 
+using Semester4_Project.Business.Models;
 using Semester4_Project.DataAccess.Entities;
 using Semester4_Project.DataAccess.Repositories;
 
-namespace Semester4_Project.Business;
+namespace Semester4_Project.Business.Services;
 
 public class ProfileService
 {
@@ -65,20 +66,10 @@ public class ProfileService
         };
     }
 
-    // Turns ["Back end", "Testing"] into "Back end,Testing".
-    // Empty items, doubles and commas inside an item are left out, so the text can be split again.
+    // Lists are saved as one text, e.g. ["Back end", "Testing"] becomes "Back end,Testing".
     private static string JoinList(List<string> items)
     {
-        var cleaned = new List<string>();
-        foreach (var item in items)
-        {
-            var text = item.Replace(",", "").Trim();
-            if (text != "" && !cleaned.Contains(text))
-            {
-                cleaned.Add(text);
-            }
-        }
-        return string.Join(",", cleaned);
+        return string.Join(",", items);
     }
 
     private static List<string> SplitList(string text)
