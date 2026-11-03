@@ -1,4 +1,4 @@
-/* ===== Basics ===== */
+/* basics */
 
 * {
   box-sizing: border-box;
@@ -44,7 +44,7 @@ textarea {
   font-size: 13px;
 }
 
-/* ===== Login and register ===== */
+/* login + register */
 
 .login-page {
   display: flex;
@@ -103,7 +103,7 @@ textarea {
   color: #fff;
 }
 
-/* ===== Layout: sidebar, cards, lists ===== */
+/* layout */
 
 .app {
   display: flex;
@@ -175,7 +175,7 @@ textarea {
   background: #fff;
 }
 
-/* ===== Student: group page ===== */
+/* student group */
 
 .group-page .card {
   width: 240px;
@@ -194,7 +194,7 @@ textarea {
   margin-top: 24px;
 }
 
-/* ===== Student: dashboard ===== */
+/* student dashboard */
 
 .announcement {
   margin-bottom: 10px;
@@ -260,7 +260,7 @@ textarea {
   color: #fff;
 }
 
-/* ===== Student: profile ===== */
+/* student profile */
 
 .profile-card {
   display: flex;
@@ -303,7 +303,7 @@ textarea {
   border-radius: 4px;
 }
 
-/* ===== Teacher: groups page ===== */
+/* teacher groups */
 
 .groups-card {
   margin-top: 24px;

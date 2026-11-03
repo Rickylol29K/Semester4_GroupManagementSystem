@@ -1,5 +1,4 @@
-// The rules for student profiles: getting a student's profile and saving changes to it.
-// A student who never saved a profile gets an empty one back.
+//get and save student profiles
 
 using Semester4_Project.Business.Models;
 using Semester4_Project.DataAccess.Entities;
@@ -27,7 +26,7 @@ public class ProfileService
         return ToProfileInfo(profile);
     }
 
-    // Creates the profile the first time, after that it updates the same profile.
+    //creates the profile the first time, after that just updates it
     public async Task<ProfileInfo> SaveAsync(int userId, ProfileInfo info)
     {
         var profile = await _profiles.GetByUserIdAsync(userId);
@@ -66,7 +65,7 @@ public class ProfileService
         };
     }
 
-    // Lists are saved as one text, e.g. ["Back end", "Testing"] becomes "Back end,Testing".
+    //lists are saved as one text
     private static string JoinList(List<string> items)
     {
         return string.Join(",", items);

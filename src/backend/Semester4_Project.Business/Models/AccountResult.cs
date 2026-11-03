@@ -1,4 +1,4 @@
-// The answer AccountService gives back: either a User (it worked) or an Error message (it failed).
+//either a user or an error
 
 namespace Semester4_Project.Business.Models;
 

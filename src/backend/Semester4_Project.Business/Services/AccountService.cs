@@ -1,5 +1,4 @@
-// The rules for accounts: registering, logging in and listing students.
-// Checks things like "is this email already used?" and "is the password correct?".
+//register, login and get all students
 
 using Microsoft.AspNetCore.Identity;
 using Semester4_Project.Business.Models;
@@ -12,7 +11,7 @@ public class AccountService
 {
     private readonly UserRepository _users;
 
-    // Turns a password into a salted hash, so we never store the real password.
+    //hashes passwords so we never store the real one
     private readonly PasswordHasher<User> _hasher = new();
 
     public AccountService(UserRepository users)
@@ -45,7 +44,7 @@ public class AccountService
     {
         var user = await _users.GetByEmailAsync(email.Trim().ToLower());
 
-        // Same message for both cases, so nobody can find out which emails exist.
+        //same message for both, so nobody can find out which emails exist
         if (user == null || _hasher.VerifyHashedPassword(user, user.PasswordHash, password) == PasswordVerificationResult.Failed)
         {
             return new AccountResult { Error = "Email or password is incorrect." };

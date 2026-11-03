@@ -1,4 +1,4 @@
-// Start point of the React app. Puts <App /> on the page and turns on routing.
+//start of the react app
 
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";

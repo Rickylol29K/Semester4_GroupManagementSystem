@@ -1,4 +1,4 @@
-// Login page. Sends email + password to the backend and goes to the right start page.
+//login page
 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -11,7 +11,7 @@ export default function Login() {
   const [staySignedIn, setStaySignedIn] = useState(false);
   const [error, setError] = useState("");
 
-  // Log in, then go to the student or teacher start page.
+  //log in and go to the start page
   async function handleSubmit(event) {
     event.preventDefault();
     try {

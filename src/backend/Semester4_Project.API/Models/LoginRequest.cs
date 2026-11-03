@@ -1,4 +1,4 @@
-// The data the frontend sends to log in.
+//what the frontend sends to log in
 
 using System.ComponentModel.DataAnnotations;
 

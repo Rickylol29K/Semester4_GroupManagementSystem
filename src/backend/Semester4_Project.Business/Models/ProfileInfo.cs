@@ -1,5 +1,4 @@
-// A student's profile, as the frontend sends and receives it.
-// The [MaxLength] rules are checked automatically, so nobody can send huge texts.
+//student profile that goes to and from the frontend
 
 using System.ComponentModel.DataAnnotations;
 
@@ -27,6 +26,6 @@ public class ProfileInfo
     [MaxLength(1000)]
     public string WorkingPreferences { get; set; } = "";
 
-    // The days the student can work on the project, e.g. ["Monday", "Thursday"].
+    //days the student can work
     public List<string> Availability { get; set; } = new();
 }

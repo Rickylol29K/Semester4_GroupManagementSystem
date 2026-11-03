@@ -1,5 +1,4 @@
-// Guards a page: only shows it if a user with the right role is logged in,
-// otherwise sends them to the login page or to their own start page.
+//only shows the page if the right role is logged in
 
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
@@ -12,13 +11,13 @@ export default function RequireRole({ role, children }) {
     getCurrentUser().then(setUser);
   }, []);
 
-  // Still checking
+  //still checking
   if (user === undefined) return null;
 
-  // Not logged in
+  //not logged in
   if (user === null) return <Navigate to="/" />;
 
-  // Logged in, but this page is for the other role
+  //wrong role
   if (user.role !== role) return <Navigate to={homePage(user)} />;
 
   return children;

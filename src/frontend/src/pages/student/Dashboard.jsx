@@ -1,4 +1,4 @@
-// Student dashboard with announcements and a calendar. Still example data (user stories 8 and 9).
+//announcements and calendar, still example data
 
 import { useState } from "react";
 import Layout from "../../components/Layout.jsx";
@@ -7,7 +7,7 @@ const dayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const students = ["Student 1", "Student 2", "Student 3", "Student 4", "Student 5", "Student 6"];
 const daysInOctober = 31;
 
-// getDay() gives 0 for Sunday, so shift it to make Monday the first column.
+//make monday the first day
 const firstWeekday = (new Date(new Date().getFullYear(), 9, 1).getDay() + 6) % 7;
 const days = Array.from({ length: daysInOctober }, (_, i) => i + 1);
 
@@ -18,20 +18,20 @@ export default function Dashboard() {
   ]);
   const [announcementText, setAnnouncementText] = useState("");
 
-  // Events per day, e.g. { 12: ["Meeting (Student 1)"] }
+  //events per day
   const [events, setEvents] = useState({});
   const [eventText, setEventText] = useState("");
   const [eventDay, setEventDay] = useState("");
   const [eventStudent, setEventStudent] = useState("");
 
-  // Post new announcement at top of the list
+  //new announcement goes on top
   function postAnnouncement(event) {
     event.preventDefault();
     setAnnouncements([{ author: "You", text: announcementText }, ...announcements]);
     setAnnouncementText("");
   }
 
-  // Add event to the chosen day.
+  //add event to the chosen day
   function createEvent(event) {
     event.preventDefault();
     const label = eventStudent ? eventText + " (" + eventStudent + ")" : eventText;

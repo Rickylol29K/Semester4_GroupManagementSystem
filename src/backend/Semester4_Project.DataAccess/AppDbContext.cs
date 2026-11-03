@@ -1,5 +1,4 @@
-// The connection between our C# code and the SQL Server database.
-// Every DbSet here is a table.
+//connection to the database, every DbSet is a table
 
 using Microsoft.EntityFrameworkCore;
 using Semester4_Project.DataAccess.Entities;
@@ -17,12 +16,12 @@ public class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // Two accounts can't share the same email.
+        //email has to be unique
         modelBuilder.Entity<User>().HasIndex(u => u.Email).IsUnique();
         modelBuilder.Entity<User>().Property(u => u.Email).HasMaxLength(256);
         modelBuilder.Entity<User>().Property(u => u.Role).HasMaxLength(20);
 
-        // A student has one profile, and it is deleted together with the account.
+        //one profile per student, deleted with the account
         modelBuilder.Entity<StudentProfile>().HasIndex(p => p.UserId).IsUnique();
         modelBuilder.Entity<StudentProfile>()
             .HasOne<User>()

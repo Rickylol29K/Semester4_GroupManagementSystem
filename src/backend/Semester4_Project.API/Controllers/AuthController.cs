@@ -1,5 +1,4 @@
-// Handles account requests from the frontend: register, log in, log out and "who am I".
-// It passes the work to AccountService and gives the browser a login cookie.
+//register, login, logout and who is logged in
 
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
@@ -56,7 +55,7 @@ public class AuthController : ControllerBase
         return Ok();
     }
 
-    // Returns who is logged in, or 401 if nobody is.
+    //returns who is logged in, 401 if nobody
     [Authorize]
     [HttpGet("me")]
     public IActionResult Me()
@@ -69,7 +68,7 @@ public class AuthController : ControllerBase
         });
     }
 
-    // Puts the user's id, email and role in a login cookie.
+    //puts id, email and role in the login cookie
     private async Task SignInAsync(UserInfo user, bool staySignedIn)
     {
         var claims = new List<Claim>

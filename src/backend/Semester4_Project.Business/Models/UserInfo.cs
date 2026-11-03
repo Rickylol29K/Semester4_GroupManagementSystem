@@ -1,4 +1,4 @@
-// The user data the rest of the app may see. The password hash is left out on purpose.
+//user without the password hash
 
 namespace Semester4_Project.Business.Models;
 

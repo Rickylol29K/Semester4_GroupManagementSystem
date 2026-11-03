@@ -1,4 +1,4 @@
-// One row in the Users table: an account with an email, a hashed password and a role.
+//Users table
 
 namespace Semester4_Project.DataAccess.Entities;
 
@@ -8,6 +8,6 @@ public class User
     public string Email { get; set; } = "";
     public string PasswordHash { get; set; } = "";
 
-    // "Student" or "Teacher"
+    //Student or Teacher
     public string Role { get; set; } = "";
 }

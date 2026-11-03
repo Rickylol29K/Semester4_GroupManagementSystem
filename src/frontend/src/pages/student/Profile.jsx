@@ -1,5 +1,4 @@
-// Student profile page (user story 2). The student fills in who they are and how they like to work,
-// so the system can find a group that fits them. It is saved in the backend and can be changed later.
+//student profile page
 
 import { useEffect, useState } from "react";
 import Layout from "../../components/Layout.jsx";
@@ -8,7 +7,7 @@ import { getProfile, saveProfile } from "../../api.js";
 const skills = ["Back end", "Front end", "Database", "UI/UX design", "Testing", "DevOps"];
 const weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
-// The text fields of the profile, with the label shown above each one.
+//text fields with their label
 const textFields = [
   { name: "interests", label: "Interests" },
   { name: "strengths", label: "Strengths" },
@@ -33,7 +32,7 @@ export default function Profile() {
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
 
-  // Load the saved profile when the page opens.
+  //load the saved profile
   useEffect(() => {
     getProfile().then(setProfile).catch((err) => setError(err.message));
   }, []);
@@ -43,7 +42,7 @@ export default function Profile() {
     setStatus("");
   }
 
-  // Adds the item to the list if it is checked, removes it if it is unchecked.
+  //checked = add, unchecked = remove
   function toggle(listName, item) {
     const list = profile[listName];
     setField(listName, list.includes(item) ? list.filter((x) => x !== item) : [...list, item]);

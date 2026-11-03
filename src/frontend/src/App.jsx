@@ -1,4 +1,4 @@
-// The list of pages: which address shows which page, and who is allowed to see it.
+//all pages and who can see them
 
 import { Navigate, Route, Routes } from "react-router-dom";
 import RequireRole from "./components/RequireRole.jsx";

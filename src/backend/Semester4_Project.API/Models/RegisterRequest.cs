@@ -1,5 +1,4 @@
-// The data the frontend sends to create an account.
-// The [Required], [EmailAddress] and [MinLength] rules are checked automatically.
+//what the frontend sends to register
 
 using System.ComponentModel.DataAnnotations;
 

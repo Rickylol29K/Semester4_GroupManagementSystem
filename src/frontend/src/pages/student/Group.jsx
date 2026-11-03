@@ -1,4 +1,4 @@
-// Student page that shows their group members. Still example data (user story 6).
+//group members, still example data
 
 import { useState } from "react";
 import Layout from "../../components/Layout.jsx";

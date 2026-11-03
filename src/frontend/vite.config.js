@@ -1,4 +1,4 @@
-//settings for Vite, the tool that runs and builds the React app.
+//vite settings
 
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
@@ -6,7 +6,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
-    //send /api calls to the .NET backend, so the login cookie works on the same address.
+    //send /api calls to the backend
     proxy: {
       "/api": "http://localhost:5100",
     },
