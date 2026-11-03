@@ -1,5 +1,4 @@
-// Lets a logged in student see and change their own profile.
-// Teachers get 403 Forbidden, logged out users get 401.
+//student can see and change their own profile
 
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
@@ -33,7 +32,7 @@ public class ProfileController : ControllerBase
         return Ok(await _profiles.SaveAsync(CurrentUserId(), profile));
     }
 
-    // The id of the logged in user, taken from the login cookie.
+    //id of the logged in user from the cookie
     private int CurrentUserId()
     {
         return int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);

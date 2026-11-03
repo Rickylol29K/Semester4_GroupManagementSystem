@@ -1,4 +1,4 @@
-// Requests only teachers may use. Students get 403 Forbidden, logged out users get 401.
+//only teachers can use this
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

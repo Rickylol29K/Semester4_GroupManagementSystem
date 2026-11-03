@@ -1,12 +1,11 @@
-# Builds the backend API into a Docker image.
 
-# Step 1: build the API with the .NET SDK.
+#build the api
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 COPY src/backend/ ./
 RUN dotnet publish Semester4_Project.API -c Release -o /app
 
-# Step 2: run the API with only the smaller ASP.NET runtime.
+#run the api
 FROM mcr.microsoft.com/dotnet/aspnet:10.0
 WORKDIR /app
 COPY --from=build /app ./

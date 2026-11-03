@@ -1,17 +1,17 @@
-# Editor settings
+#editor
 .idea/
 .vs/
 *.user
 
-# Build output
+#build output
 bin/
 obj/
 TestResults/
 
-# Frontend
+#frontend
 node_modules/
 dist/
 
-# Other
+#other
 .env
 .DS_Store

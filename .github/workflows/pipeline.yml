@@ -1,5 +1,5 @@
-# Runs on every push: builds and tests the backend and the frontend.
-# On the main branch it also puts the backend in a Docker image on GitHub.
+#builds and tests everything on every push
+#on main it also pushes the backend docker image to github
 name: Pipeline
 
 on: [push, pull_request]

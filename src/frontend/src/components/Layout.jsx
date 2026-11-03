@@ -1,4 +1,4 @@
-// The sidebar menu + page content, shared by every page after logging in.
+//sidebar + page content
 
 import { NavLink, useNavigate } from "react-router-dom";
 import { logout } from "../api.js";
@@ -12,7 +12,7 @@ const teacherLinks = [
   { to: "/teacher/groups", label: "Groups" },
 ];
 
-// NavLink adds the "active" class to the link of the current page.
+//NavLink makes the current page bold
 export default function Layout({ role, className = "", children }) {
   const navigate = useNavigate();
   const links = role === "Teacher" ? teacherLinks : studentLinks;

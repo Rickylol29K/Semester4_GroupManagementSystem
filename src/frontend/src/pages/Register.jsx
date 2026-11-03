@@ -1,4 +1,4 @@
-// Page to create a new student or teacher account.
+//register page
 
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -11,7 +11,7 @@ export default function Register() {
   const [role, setRole] = useState("Student");
   const [error, setError] = useState("");
 
-  // Create the account. The backend logs the new user in straight away.
+  //backend logs you in straight away
   async function handleSubmit(event) {
     event.preventDefault();
     try {

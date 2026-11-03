@@ -1,4 +1,4 @@
-# Local SQL Server for development. Start it with: docker compose up -d
+#local database, start with: docker compose up -d
 services:
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest

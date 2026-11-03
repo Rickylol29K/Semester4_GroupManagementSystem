@@ -1,4 +1,4 @@
-// Reads and saves student profiles in the database. The only place that touches the StudentProfiles table.
+//reads and saves profiles in the database
 
 using Microsoft.EntityFrameworkCore;
 using Semester4_Project.DataAccess.Entities;
@@ -19,7 +19,7 @@ public class ProfileRepository
         return _db.StudentProfiles.FirstOrDefaultAsync(p => p.UserId == userId);
     }
 
-    // Marks a new profile to be added. It is stored when SaveAsync is called.
+    //gets stored when SaveAsync is called
     public void Add(StudentProfile profile)
     {
         _db.StudentProfiles.Add(profile);

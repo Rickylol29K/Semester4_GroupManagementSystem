@@ -1,5 +1,4 @@
-// Starts the API for the tests with an in-memory database instead of SQL Server,
-// so the tests don't need a real database running.
+//runs the api with an in-memory database for the tests
 
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;

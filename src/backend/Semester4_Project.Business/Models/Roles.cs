@@ -1,4 +1,4 @@
-// The two kinds of account in the app: Student and Teacher.
+//the two account types
 
 namespace Semester4_Project.Business.Models;
 

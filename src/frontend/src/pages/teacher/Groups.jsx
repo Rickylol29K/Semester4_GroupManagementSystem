@@ -1,4 +1,4 @@
-// Teacher page to make a project and see groups. Shows the students that have an account.
+//teacher page for projects and groups
 
 import { useEffect, useState } from "react";
 import Layout from "../../components/Layout.jsx";
@@ -12,12 +12,12 @@ export default function Groups() {
   const [projectName, setProjectName] = useState("");
   const [requests, setRequests] = useState(["Student 1", "Student 2", "Student 3"]);
 
-  // Start with the students that have an account.
+  //load students that have an account
   useEffect(() => {
     getStudents().then((list) => setStudents(list.map((student) => student.email)));
   }, []);
 
-  // Add a student to the list.
+  //add student to the list
   function addStudent(event) {
     event.preventDefault();
     setStudents([...students, studentName]);
@@ -25,7 +25,7 @@ export default function Groups() {
   }
 
   function handleRequest(name) {
-    // Approving or denying a change request removes it from the list.
+    //approve or deny both remove it
     setRequests(requests.filter((request) => request !== name));
   }
 

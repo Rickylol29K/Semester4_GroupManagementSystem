@@ -1,5 +1,4 @@
-// Tests for user story 2 (student profile).
-// Each test checks one acceptance criterion by calling the real API.
+//tests for the student profile
 
 using System.Net;
 using System.Net.Http.Json;
@@ -16,7 +15,7 @@ public class ProfileTests : IClassFixture<TestAppFactory>
         _factory = factory;
     }
 
-    // Returns a client that is logged in as a new account with the given role.
+    //new account that is already logged in
     private async Task<HttpClient> LoggedInClientAsync(string email, string role)
     {
         var client = _factory.CreateClient();

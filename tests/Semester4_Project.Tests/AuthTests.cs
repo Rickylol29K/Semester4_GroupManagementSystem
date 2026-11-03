@@ -1,5 +1,4 @@
-// Tests for user story 1 (account registration and login).
-// Each test checks one acceptance criterion by calling the real API.
+//tests for register and login
 
 using System.Net;
 using System.Net.Http.Json;
