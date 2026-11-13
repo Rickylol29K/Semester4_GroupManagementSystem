@@ -51,6 +51,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-//so the tests can start the app
-public partial class Program { }

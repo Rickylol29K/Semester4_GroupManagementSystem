@@ -24,7 +24,7 @@ src/
     src/components/                   pieces used on many pages (sidebar, role check)
     src/api.js                        all calls to the backend
 tests/
-  Semester4_Project.Tests/          tests that call the real API with an in-memory database
+  Semester4_Project.Tests/          unit tests for the services, using an in-memory database
 ```
 
 A request goes: **frontend → Controller → Service → Repository → database**.
